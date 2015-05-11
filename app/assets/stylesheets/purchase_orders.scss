@@ -1,3 +1,29 @@
-// Place all the styles related to the purchase_orders controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+$element-height: 500px;
+
+.horizantal-centering{
+  margin: auto;
+  margin: auto;
+  display:block;
+}
+
+
+input{
+  max-width: 500px;
+}
+
+#purchase-order-form{
+  @extend .horizantal-centering;
+  height: $element-height;
+  margin-top: 5%;
+}
+
+
+#product-image{
+  @extend .horizantal-centering;
+  height: $element-height;
+}
+
+.row{
+  margin: 5%;
+  height: $element-height;
+}
