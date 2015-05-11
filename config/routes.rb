@@ -1,10 +1,6 @@
 Rails.application.routes.draw do
 
 
-  get 'purchase_orders/new'
-
-  get 'purchase_orders/show'
-
   resources :purchase_orders
 
   # The priority is based upon order of creation: first created -> highest priority.
