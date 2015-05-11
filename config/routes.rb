@@ -1,15 +1,17 @@
 Rails.application.routes.draw do
 
 
-  resource :products do
-    resources :purchase_orders
-  end
+  get 'purchase_orders/new'
+
+  get 'purchase_orders/show'
+
+  resources :purchase_orders
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root 'products#show'
+  root 'purchase_orders#new'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
