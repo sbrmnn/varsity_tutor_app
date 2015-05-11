@@ -1,8 +1,6 @@
 Rails.application.routes.draw do
 
 
-  get 'products/show'
-
   resource :products do
     resources :purchase_orders
   end
