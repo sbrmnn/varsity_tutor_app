@@ -6,14 +6,36 @@ $element-height: 500px;
   display:block;
 }
 
+.background-color{
+  background: red;
+}
 
-input{
+.text-color{
+  color: white;
+}
+
+.border-color{
+  border-color: white;
+}
+
+body{
+  @extend .background-color;
+  @extend .text-color;
+
+}
+
+.form-control{
+  @extend .horizantal-centering;
+  @extend .background-color;
+  @extend .border-color;
   max-width: 500px;
+  border-style: solid;
+  border-width: 5px;
 }
 
 #purchase-order-form{
   @extend .horizantal-centering;
-  height: $element-height;
+   
   margin-top: 5%;
 }
 
@@ -23,7 +45,12 @@ input{
   height: $element-height;
 }
 
+
 .row{
   margin: 5%;
   height: $element-height;
 }
+
+.table th, .table td {
+     border-top: none !important;
+ }

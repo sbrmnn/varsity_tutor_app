@@ -3,36 +3,50 @@
     <div class="col-md-4">
       <img id="product-image" src="http://images.clipartpanda.com/soda-clip-art-soda-can3.png"/>
     </div>
-    <div class="col-md-8">
+    <div class="col-md-4">
 
       <%= form_for @purchase_order, html: {id: "purchase-order-form"}  do |f|  %>
-            <fieldset>
-              <div class="form-group">
-                <label for="inputName">Name*</label>
-                  <%= f.text_field  :purchasers_name, class: "form-control" %>
-              </div>
-              <div class="form-group">
-                <label for="inputName">Address*</label>
-                  <%= f.text_field  :address, class: "form-control" %>
-              </div>
-              <div class="form-group">
-                <label for="inputName">City*</label>
+        <fieldset>
+          <div class="form-group">
+            <%= f.label :purchasers_name, "Name*" %>
+            <%= f.text_field  :purchasers_name, class: "form-control" %>
+          </div>
+          <div class="form-group">
+            <%= f.label :address, "Address*" %>
+            <%= f.text_field  :address, class: "form-control" %>
+          </div>
+          <div class="form-group">
+            <%= f.label :city, "City*" %>
+            <%= f.text_field  :city, class: "form-control" %>
+          </div>
+          <div class="form-group">
+            <%= f.label :state, "State*" %>
+            <%= f.text_field :state, class: "form-control" %>
+          </div>
+          <div class="form-group">
+            <button type="submit" class="btn btn-success">Buy SOLEPOP!</button>
+          </div>
+        <fieldset>
+      <%end%>
+      <% if flash %>
+          <% flash.each do |type, message| %>
+            <ul>
+               <% message.each do |key,value| %>
+                  <li><%= "#{key.to_s.capitalize.gsub('_', ' ')}  #{value.first}" %> </li>
+               <% end %>
+            </ul>
+          <% end %>
+        <% end %>
+    </div>
 
-                  <%= f.text_field  :city, class: "form-control" %>
-
-              </div>
-                <div class="form-group">
-                  <label for="inputName">State*</label>
-
-                     <%= f.text_field :state, class: "form-control" %>
-                 </div>
-                 <div class="form-group">
-                     <button type="submit" class="btn btn-primary">Buy!</button>
-                 </div>
-
-
-           <fieldset>
-          <%end%>
+    <div class="col-md-4">
+      <h3>Purchases</h3>
+      <h6>Count: <span id ="purchase-count"></span></h6>
+      <dl id ="purchase-list">
+        <% @purchase_order_all.each do |po| %>
+          <dt class="purchase-name"><span><%= po.purchasers_name %> from <%= po.city %>, <%= po.state %></dt>
+        <% end %>
+      </dl>
 
     </div>
   </div>
