@@ -1,4 +1,5 @@
 class PurchaseOrdersController < ApplicationController
+
   def new
     @purchase_order = PurchaseOrder.new
     purchase_order_all

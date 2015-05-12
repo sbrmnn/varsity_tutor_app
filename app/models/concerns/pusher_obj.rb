@@ -10,6 +10,4 @@ module PusherObj
       })
     end
   end
-
-
 end
