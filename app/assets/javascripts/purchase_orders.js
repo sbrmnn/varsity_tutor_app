@@ -18,12 +18,8 @@ function getPurchasersCount(){
 }
 
 function addChildNodeToPurchasesList(message){
-  var messageArray =  message.split("+")
   var purchase_list = document.getElementById('purchase-list')
-  var messageName = messageArray[0];
-  var messageCity = messageArray[1];
-  var messageState = messageArray[2];
-  var textNode= document.createTextNode(messageName + " " + "from" + " "+ messageCity+", "+ messageState)
+  var textNode= document.createTextNode(message)
   var newItem = document.createElement("dt");
   newItem.className = 'purchase-name';
   newItem.appendChild(textNode);

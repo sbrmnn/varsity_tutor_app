@@ -44,7 +44,7 @@
       <h6>Count: <span id ="purchase-count"></span></h6>
       <dl id ="purchase-list">
         <% @purchase_order_all.each do |po| %>
-          <dt class="purchase-name"><span><%= po.purchasers_name %> from <%= po.city %>, <%= po.state %></dt>
+          <dt class="purchase-name"><%= po.pusher_string %></dt>
         <% end %>
       </dl>
 

@@ -37,6 +37,11 @@ describe PurchaseOrder do
     assert(purchase_order_new.errors.messages[:city].present?)
   end
 
+  it "should create a pusher string" do
+    purchase_order_create
+    assert_equal("First Name and Last Name Atlanta, Ga", purchase_order_create.pusher_string)
+  end
+
   it "must not be valid if state field is not filled in" do
     purchase_order_new.purchasers_name = "Arun"
     purchase_order_new.address = "8777 laurel drive"
