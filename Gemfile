@@ -33,6 +33,9 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+# Ruby server library for the Pusher API
+gem 'pusher'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
@@ -47,8 +50,11 @@ group :development, :test do
   gem 'factory_girl_rails'
 
   # rspec-rails is a testing framework for Rails 3.x and 4.x.
-  gem 'rspec-rails', '~> 3.0'
+  #gem 'rspec-rails', '~> 3.0'
 
   # Capybara
   gem 'capybara'
+
+  #Minitest
+  gem "minitest-rails"
 end
