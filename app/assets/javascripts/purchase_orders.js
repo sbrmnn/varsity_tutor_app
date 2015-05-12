@@ -12,16 +12,20 @@ document.addEventListener("DOMContentLoaded", function(event) {
 });
 
 function getPurchasersCount(){
-  var purchaseCount = document.querySelectorAll('#purchase-list .purchase-name').length
-  var elem = document.getElementById('purchase-count')
-  elem.innerHTML = purchaseCount;
+  var purchaseList = document.querySelectorAll('#purchase-list .purchase-name');
+  if (purchaseList != undefined){
+    var elem = document.getElementById('purchase-count');
+    elem.innerHTML = purchaseList.length;
+  }
 }
 
 function addChildNodeToPurchasesList(message){
-  var purchase_list = document.getElementById('purchase-list')
-  var textNode= document.createTextNode(message)
-  var newItem = document.createElement("dt");
-  newItem.className = 'purchase-name';
-  newItem.appendChild(textNode);
-  purchase_list.insertBefore(newItem,purchase_list.childNodes[0]);
+  var purchaseList = document.getElementById('purchase-list');
+  if (purchaseList != undefined){
+    var textNode= document.createTextNode(message);
+    var newItem = document.createElement("dt");
+    newItem.className = 'purchase-name';
+    newItem.appendChild(textNode);
+    purchaseList.insertBefore(newItem, purchaseList.childNodes[0]);
+  }
 }
