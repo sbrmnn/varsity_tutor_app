@@ -10,6 +10,7 @@ $element-height: 500px;
   background: red;
 }
 
+
 .text-color{
   color: white;
 }
@@ -28,6 +29,7 @@ body{
   @extend .horizantal-centering;
   @extend .background-color;
   @extend .border-color;
+  @extend .text-color;
   max-width: 500px;
   border-style: solid;
   border-width: 5px;
@@ -35,7 +37,7 @@ body{
 
 #purchase-order-form{
   @extend .horizantal-centering;
-   
+
   margin-top: 5%;
 }
 
