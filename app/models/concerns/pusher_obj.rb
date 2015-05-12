@@ -3,9 +3,9 @@ module PusherObj
 
   private
 
-  def push(message)
+  def push(channel, message)
     if message.present?
-      Pusher['purchase_channel'].trigger('my_event', {
+      Pusher[channel].trigger('my_event', {
         message: message
       })
     end

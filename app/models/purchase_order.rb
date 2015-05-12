@@ -4,13 +4,13 @@ class PurchaseOrder < ActiveRecord::Base
   after_commit :send_purchase_order_to_pusher
 
   def pusher_string
-    "#{self.purchasers_name} #{self.city}, #{self.state}"
+    "#{self.purchasers_name} from #{self.city}, #{self.state}"
   end
 
   private
 
   def send_purchase_order_to_pusher
-    push(pusher_string)
+    push('purchase_channel',pusher_string)
   end
 
 end
