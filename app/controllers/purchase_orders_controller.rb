@@ -3,6 +3,7 @@ class PurchaseOrdersController < ApplicationController
   def new
     @purchase_order = PurchaseOrder.new
     purchase_order_all
+    @purchase_order_count = PurchaseOrder.all.count
   end
 
   def create
@@ -19,11 +20,8 @@ class PurchaseOrdersController < ApplicationController
   private
 
   def purchase_order_all
-    @purchase_order_all = []
-    PurchaseOrder.find_each do |po|
-      @purchase_order_all.unshift(po)
-    end
-    @purchase_order_all.flatten!
+    @limit = 20
+    @purchase_order_all = PurchaseOrder.order("id DESC").all.limit(@limit)
   end
 
   def purchase_order_params

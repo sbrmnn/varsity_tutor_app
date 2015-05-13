@@ -42,7 +42,9 @@
     <div class="col-md-4">
       <h3>Purchases</h3>
       <h6>Count: <span id ="purchase-count"></span></h6>
-      <dl id ="purchase-list">
+      <div id="hidden-count" hidden><%=@purchase_order_count%></div>
+      <div id="hidden-limit" hidden><%=@limit%></div>
+       <dl id ="purchase-list">
         <% @purchase_order_all.each do |po| %>
           <dt class="purchase-name"><%= po.pusher_string %></dt>
         <% end %>
