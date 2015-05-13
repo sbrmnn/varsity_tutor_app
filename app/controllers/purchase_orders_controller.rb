@@ -13,6 +13,7 @@ class PurchaseOrdersController < ApplicationController
     else
       flash[:error] = @purchase_order.errors
       purchase_order_all
+      @purchase_order_count = PurchaseOrder.all.count
       render :new
     end
   end
