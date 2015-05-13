@@ -6,9 +6,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
   channel.bind('my_event', function(data) {
     addChildNodeToPurchasesList(data.message);
 
-
   });
-
 
 });
 
@@ -23,7 +21,6 @@ function populatePurchasersCount(count){
     pc.innerHTML = count;
   }
 }
-
 
 function addChildNodeToPurchasesList(message){
   var purchaseList = document.getElementById('purchase-list');
@@ -48,5 +45,4 @@ function removeLastChildIfLimitHasBeenReached(limit){
       purchaseListTable.removeChild(lastElementInPurchaseListTable)
     }
   }
-
 }
