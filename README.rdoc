@@ -1,28 +1,17 @@
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Assuming that you have the latest rails installed along with Ruby.
 
-Things you may want to cover:
+Instructions:
+-------------
 
-* Ruby version
+Open terminal and type:
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+Fetch project from github.
+```
+git clone git@github.com:sbrmnn/varsity_tutor_app.git
+```
+Run the rails server setting the database password enviornmental variable.
+```
+DB_PASSWORD=<your db password> rails s
+```
