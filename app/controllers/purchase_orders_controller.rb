@@ -11,7 +11,7 @@ class PurchaseOrdersController < ApplicationController
     if @purchase_order.save
       redirect_to :root
     else
-      flash[:error] = @purchase_order.errors
+      flash[:error] = @purchase_order.try(:errors).try(:full_messages)
       purchase_order_all
       @purchase_order_count = PurchaseOrder.all.count
       render :new

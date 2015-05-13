@@ -45,11 +45,11 @@ function addChildNodeToPurchasesList(message){
 
 function removeLastChildIfLimitHasBeenReached(limit){
   if (limit != undefined) {
-    var purchaseListTable = document.getElementById('purchase-list');
-    var purchaseList = document.querySelectorAll('#purchase-list .purchase-name');
-    if (purchaseListTable != undefined && purchaseList!= undefined && purchaseList.length > limit){
-      var lastElementInPurchaseListTable = purchaseListTable.lastElementChild;
-      purchaseListTable.removeChild(lastElementInPurchaseListTable)
+    var purchaseList = document.getElementById('purchase-list');
+    var purchasers = document.querySelectorAll('#purchase-list .purchase-name');
+    if (purchaseList != undefined && purchasers!= [] && purchasers.length > limit){
+      var lastElementInPurchaseListTable = purchaseList.lastElementChild;
+      purchaseList.removeChild(lastElementInPurchaseListTable)
     }
   }
 }
