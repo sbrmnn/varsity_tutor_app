@@ -12,13 +12,17 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
 function updatePurchasersCount(){
     var elem = document.getElementById('purchase-count');
-    elem.innerHTML = parseInt(elem.innerHTML) + 1;
+    if(elem != undefined){
+      elem.innerHTML = parseInt(elem.innerHTML) + 1;
+   }
 }
 
 function populatePurchasersCount(count){
   if (count != undefined){
     var pc = document.getElementById('purchase-count');
-    pc.innerHTML = count;
+    if (pc != undefined){
+      pc.innerHTML = count;
+    }
   }
 }
 
@@ -30,9 +34,12 @@ function addChildNodeToPurchasesList(message){
     newItem.className = 'purchase-name';
     newItem.appendChild(textNode);
     purchaseList.insertBefore(newItem, purchaseList.childNodes[0]);
-    var limit = parseInt(document.getElementById('hidden-limit').textContent);
-    removeLastChildIfLimitHasBeenReached(limit)
-    updatePurchasersCount();
+    var hiddenLimit = document.getElementById('hidden-limit')
+    if (hiddenLimit != undefined){
+      var limit = parseInt(document.getElementById('hidden-limit').textContent);
+      removeLastChildIfLimitHasBeenReached(limit)
+      updatePurchasersCount();
+   }
   }
 }
 
@@ -40,7 +47,7 @@ function removeLastChildIfLimitHasBeenReached(limit){
   if (limit != undefined) {
     var purchaseListTable = document.getElementById('purchase-list');
     var purchaseList = document.querySelectorAll('#purchase-list .purchase-name');
-    if (purchaseList.length >= limit){
+    if (purchaseListTable != undefined && purchaseList!= undefined && purchaseList.length > limit){
       var lastElementInPurchaseListTable = purchaseListTable.lastElementChild;
       purchaseListTable.removeChild(lastElementInPurchaseListTable)
     }
