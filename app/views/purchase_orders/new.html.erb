@@ -31,18 +31,14 @@
       <% if flash[:error] %>
           <% flash[:error].each do |value| %>
             <ul>
-
-                  <li><%= "#{value}" %> </li>
-
+                <li><%= "#{value}" %> </li>
             </ul>
           <% end %>
         <% end %>
     </div>
-
     <div class="col-md-4">
       <h3>Purchases</h3>
-      <h6>Count: <span id ="purchase-count"></span></h6>
-      <div id="hidden-count" hidden><%=@purchase_order_count%></div>
+      <h6>Count: <span id ="purchase-count"><%=@purchase_order_count%></span></h6>
       <div id="hidden-limit" hidden><%=@limit%></div>
        <dl id ="purchase-list">
         <% @purchase_order_all.each do |po| %>

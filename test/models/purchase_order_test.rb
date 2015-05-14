@@ -5,7 +5,6 @@ describe PurchaseOrder do
   let(:purchase_order_create) { FactoryGirl.create(:purchase_order) }
 
   it "should be valid" do
-    purchase_order_create
     assert(purchase_order_create.valid?)
   end
 
@@ -39,7 +38,7 @@ describe PurchaseOrder do
 
   it "should create a pusher string" do
     purchase_order_create
-    assert_equal("First Name and Last Name Atlanta, Ga", purchase_order_create.pusher_string)
+    assert_equal("First Name and Last Name from Atlanta, Ga", purchase_order_create.pusher_string)
   end
 
   it "must not be valid if state field is not filled in" do

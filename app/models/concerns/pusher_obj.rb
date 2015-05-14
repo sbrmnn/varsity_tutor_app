@@ -4,7 +4,7 @@ module PusherObj
   private
 
   def push(channel, message)
-    if message.present?
+    if channel.present? && message.present?
       Pusher[channel].trigger('my_event', {
         message: message
       })

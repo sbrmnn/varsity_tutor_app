@@ -22,7 +22,6 @@ $element-height: 500px;
 body{
   @extend .background-color;
   @extend .text-color;
-
 }
 
 .form-control{
@@ -37,16 +36,13 @@ body{
 
 #purchase-order-form{
   @extend .horizantal-centering;
-
   margin-top: 5%;
 }
-
 
 #product-image{
   @extend .horizantal-centering;
   height: $element-height;
 }
-
 
 .row{
   margin: 5%;
